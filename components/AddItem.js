@@ -22,21 +22,21 @@ const AddItem = ({ items, setItems }) => {
   }
 
   return (
-    <form className="row justify-content-center align-items-center g-2" onSubmit={handleSubmit}>
-      <div className="col-4">
+    <form className="row row-cols-2 row-cols-md-3 justify-content-center align-items-center g-2" onSubmit={handleSubmit}>
+      <div className="col-8 col-md-4">
         <div className="form-floating">
           <input type="text" id="add-name" className="form-control form-control-sm" placeholder="Name" />
           <label htmlFor="add-name" className="form-label">Name</label>
         </div>
       </div>
-      <div className="col-2">
+      <div className="col-4 col-md-2">
         <div className="form-floating">
           <input type="number" id="add-count" className="form-control" placeholder="count" />
           <label htmlFor="add-count" className="form-label">Count</label>
         </div>
       </div>
-      <div className="col-2">
-        <button type="submit" className="btn btn-dark btn-lg">Add Item</button>
+      <div className="col-12 col-md-2 text-center">
+        <button type="submit" className="btn btn-dark btn-lg w-100">Add Item</button>
       </div>
     </form>
   );
