@@ -31,14 +31,14 @@ const InventoryTable = ({ items }) => {
           })}
         </tbody>
       </table>
-      <div class="modal fade" id="barcode-modal" tabIndex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Barcode</h5>
+      <div className="modal fade" id="barcode-modal" tabIndex="-1">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Barcode</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <svg id="barcode-svg" className={styles['barcode-svg']}></svg>
             </div>
           </div>

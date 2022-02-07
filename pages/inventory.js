@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AddItem from "../components/AddItem";
 import InventoryTable from "../components/InventoryTable"
 
 const Inventory = () => {
@@ -16,7 +17,7 @@ const Inventory = () => {
     <div className="container">
       {!data && "loading"}
       {data && <InventoryTable items={data}/>}
-      
+      {data && <AddItem />}
     </div>
   );
 }
