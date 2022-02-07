@@ -1,4 +1,4 @@
-const AddItem = () => {
+const AddItem = ({ items, setItems }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -6,17 +6,19 @@ const AddItem = () => {
     const count = e.target[1].value
 
     fetch(`/api/inventory/add?name=${name}&count=${count}`)
-    .then(res => res.json())
-    .then(data => {
-      const error = data.message
-      const ack = data.acknowledged
-      if (ack) {
-        console.log("added")
-      }
-      else {
-        console.log(error)
-      }
-    })
+      .then(res => res.json())
+      .then(data => {
+        const error = data.message
+        const ack = data.acknowledged
+        const id = data.insertedId
+        if (ack) {
+          setItems([...items, {_id: id, name, count}])
+          console.log("added", data)
+        }
+        else {
+          console.log(error)
+        }
+      })
   }
 
   return (
