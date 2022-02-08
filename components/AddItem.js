@@ -23,7 +23,7 @@ const AddItem = ({ items, setItems }) => {
 
   return (
     <form className="row row-cols-2 row-cols-md-3 justify-content-center align-items-center g-2" onSubmit={handleSubmit}>
-      <div className="col-8 col-md-4">
+      <div className="col-8 col-md-8">
         <div className="form-floating">
           <input type="text" id="add-name" className="form-control form-control-sm" placeholder="Name" />
           <label htmlFor="add-name" className="form-label">Name</label>
