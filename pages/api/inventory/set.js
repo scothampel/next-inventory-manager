@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  const { id, count } = req.query
+  const { id, name, count } = req.query
 
   try {
     const dbClient = await require("../../../lib/Db").connect()
@@ -8,7 +8,7 @@ export default async function handler(req, res) {
       if (count) {
         try {
           const oId = require("mongodb").ObjectId(id)
-          const update = await dbClient.collection(process.env.INVENTORY_TABLE).updateOne({ _id: oId }, { $set: { count: parseInt(count) } })
+          const update = await dbClient.collection(process.env.INVENTORY_TABLE).updateOne({ _id: oId }, { $set: { count: parseInt(count), name } })
           res.status(200).json(update)
         }
         catch {res.status(400).json({ message: "please provide a valid id" })}
